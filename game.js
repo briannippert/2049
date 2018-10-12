@@ -1,16 +1,17 @@
 document.addEventListener("keydown", function(event) {
     if (event.keyCode == 37) {
-        console.log('Left')
+        moveLeft()
     }
     if (event.keyCode == 38) {
-        console.log('Up')
+        moveUp()
     }
     if (event.keyCode == 39) {
-        console.log('Right')
+        moveRight()
     }
     if (event.keyCode == 40) {
-        console.log('Down')
+        moveDown();
     }
+    console.table(grid)
 })
 
 let grid = [
@@ -19,4 +20,17 @@ let grid = [
     [null,null,null,null],
     [null,2,2,null]
 ]
-console.log(grid)
+
+function moveLeft(){
+    console.log('Left')
+}
+function moveUp(){
+    console.log('Up')
+}
+function moveRight(){
+    console.log('Right')
+}
+function moveDown(){
+    console.log('Down')
+}
+console.table(grid)
