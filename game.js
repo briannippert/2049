@@ -22,6 +22,14 @@ let grid = [
 ]
 
 function moveLeft(){
+    grid.forEach(function(row){
+        for (col in row){
+            if(!row[col] || col == 0){
+                continue;
+            }
+            console.log(row[col])
+        }
+    })
     console.log('Left')
 }
 function moveUp(){
