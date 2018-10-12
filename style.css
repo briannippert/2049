@@ -24,3 +24,27 @@
   .grid-item[value="8"] {
     background-color: #f2b179;
   }
+  .grid-item[value="16"] {
+    background-color: #f59563;
+  }
+  .grid-item[value="32"] {
+    background-color: #f67c5f;
+  }
+  .grid-item[value="64"] {
+    background-color: #f65e3b;
+  }
+  .grid-item[value="128"] {
+    background-color: #edcf72;
+  }
+  .grid-item[value="256"] {
+    background-color: #edcc61;
+  }
+  .grid-item[value="512"] {
+    background-color: #edc850;
+  }
+  .grid-item[value="1024"] {
+    background-color: #edc53f;
+  }
+  .grid-item[value="2048"] {
+    background-color: #edc22e;
+  }
