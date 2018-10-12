@@ -2,15 +2,19 @@ document.addEventListener("keydown", function(event) {
     if (event.keyCode == 37) {
         moveLeft()
     }
-    if (event.keyCode == 38) {
+    else if (event.keyCode == 38) {
         moveUp()
     }
-    if (event.keyCode == 39) {
+    else if (event.keyCode == 39) {
         moveRight()
     }
-    if (event.keyCode == 40) {
+    else if (event.keyCode == 40) {
         moveDown();
     }
+    else{
+        return;
+    }
+    addCell()
     console.table(grid)
 })
 
@@ -35,16 +39,29 @@ function addCell(){
 }
 
 function moveLeft(){
-    grid.forEach(function(row){
-        for (col in row){
-            if(!row[col + 1] || col == 3){
-                continue;
+    var i,j,coll;
+    for(i=0;i< 4;i++){
+        for(j=0;j<4;j++){
+            if(grid[i][j]){
+                coll = j;
+                while (coll - 1 >= 0) {
+                    if (!grid[i][coll - 1]) {
+                        //If cell to left is empty
+                        grid[i][coll - 1] = grid[i][coll];
+                        grid[i][coll] = null;
+                        coll--;
+                    } 
+                    else if (grid[i][coll] == grid[i][coll - 1]) {
+                        //if cell to left matches
+                        grid[i][coll - 1] *= 2;
+                        grid[i][coll] = null;
+                        break;
+                    } 
+                    else { break; }
+                }
             }
-            if(row[col])
-            console.log(row[col])
-            
         }
-    })
+    }
     console.log('Left')
 }
 
