@@ -158,7 +158,7 @@ function drawGrid(){
     var i,j;
     for(i=0;i< 4;i++){
         for(j=0;j<4;j++){
-            var cell = document.querySelector(`.grid-item[row='${i}'][col='${j}']`)
+            var cell = document.querySelector(`.grid-item[row='${j}'][col='${i}']`)
             var value = grid[i][j];
             cell.innerHTML = value;
             cell.setAttribute("value",value)
