@@ -17,7 +17,7 @@ document.addEventListener("keydown", function(event) {
     if(tileMoved){
         addCell()
     }
-    // tileMoved = false;
+    tileMoved = false;
     drawGrid()
     console.table(grid)
 })
@@ -55,11 +55,13 @@ function moveLeft(){
                         grid[i][coll - 1] = grid[i][coll];
                         grid[i][coll] = null;
                         coll--;
+                        tileMoved = true;
                     } 
                     else if (grid[i][coll] == grid[i][coll - 1]) {
                         //if cell to left matches
                         grid[i][coll - 1] *= 2;
                         grid[i][coll] = null;
+                        tileMoved = true;
                         break;
                     } 
                     else { break; }
@@ -81,9 +83,11 @@ function moveUp(){
                 grid[row - 1][j] = grid[row][j];
                 grid[row][j] = null;
                 row--;
+                tileMoved = true;
             } else if (grid[row][j] == grid[row - 1][j]) {
                 grid[row - 1][j] *= 2;
                 grid[row][j] = null;
+                tileMoved = true;
                 break;
             } else {
                 break; 
@@ -107,9 +111,11 @@ function moveRight(){
                 grid[i][coll + 1] = grid[i][coll];
                 grid[i][coll] = null;
                 coll++;
+                tileMoved = true;
             } else if (grid[i][coll] == grid[i][coll + 1]) {
                 grid[i][coll + 1] *= 2;
                 grid[i][coll] = null;
+                tileMoved = true;
                 break;
             } else {
                 break;
@@ -132,9 +138,11 @@ function moveDown(){
                 grid[row + 1][j] = grid[row][j];
                 grid[row][j] = null;
                 row++;
+                tileMoved = true;
             } else if (grid[row][j] == grid[row + 1][j]) {
                 grid[row + 1][j] *= 2;
                 grid[row][j] = null;
+                tileMoved = true;
                 break;
             } else {
                 break; 
