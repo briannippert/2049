@@ -16,10 +16,10 @@ document.addEventListener("keydown", function(event) {
     }
     if(tileMoved){
         addCell()
+        console.table(grid)
     }
     tileMoved = false;
     drawGrid()
-    console.table(grid)
 })
 
 let grid = [
@@ -37,7 +37,6 @@ function addCell(){
         if(!grid[row][col]){
             var val = 2 * Math.ceil(Math.random() * 2);
             grid[row][col] = val;
-            console.table(grid);
             return;
         }
     }
@@ -159,6 +158,7 @@ function drawGrid(){
     for(i=0;i< 4;i++){
         for(j=0;j<4;j++){
             var cell = document.querySelector(`.grid-item[row='${j}'][col='${i}']`)
+            
             var value = grid[i][j];
             cell.innerHTML = value;
             cell.setAttribute("value",value)
@@ -166,5 +166,5 @@ function drawGrid(){
         }
     }
 }
-console.table(grid)
+
 drawGrid();
